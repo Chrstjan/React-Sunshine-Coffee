@@ -1,6 +1,8 @@
 @use "../../styles/variables" as *;
 
 .dividerStyling {
-  padding: 0.2rem;
+  padding: 0.3rem;
+  margin: 0;
+  border: $dark-color;
   background: $dark-color;
 }

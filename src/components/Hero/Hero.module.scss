@@ -3,7 +3,7 @@
 
 .heroStyling {
   display: block;
-  width: 100vw;
+  width: 96vw;
   height: 25vh;
   background-image: url("./Banner.jpg");
   background-position: center;
@@ -14,12 +14,13 @@
   h3 {
     margin: 0;
     text-align: center;
-    font-size: 30px;
     position: relative;
     top: 30%;
     left: 50%;
     transform: translate(-50%);
     color: $gray-color;
+    text-shadow: 1px 1px $dark-color;
+    font-size: 37px;
     @extend %headerFont;
   }
 }

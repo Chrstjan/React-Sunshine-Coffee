@@ -22,7 +22,7 @@ export const MainLayout = () => {
           <Icon src="./User.png" alt="User Account" isMenuOpen={isMenuOpen} />
         </Wrapper>
       </Header>
-      <HeaderCircle />
+      <HeaderCircle isMenuOpen={isMenuOpen} />
       <Outlet />
       <Footer>
         <FooterInfo
