@@ -1,13 +1,15 @@
 @use "../../../styles/variables" as *;
+@use "../../../styles/placeholders";
 
 .footerInfo {
-    align-self: center;
-    color: $gray-color;
+  align-self: center;
+  color: $gray-color;
+  @extend %breadtextFont;
 
-    &:nth-child(2) {
-        padding-right: 1.8rem;
-    }
-    &:nth-child(3) {
-        padding-right: 2.5rem;
-    }
+  &:nth-child(2) {
+    padding-right: 1.8rem;
+  }
+  &:nth-child(3) {
+    padding-right: 2.5rem;
+  }
 }

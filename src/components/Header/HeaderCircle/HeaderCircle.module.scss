@@ -1,0 +1,20 @@
+@use "../../../styles/variables" as *;
+
+.circleStyling {
+  display: block;
+  width: 5rem;
+  height: 5rem;
+  margin-left: 39%;
+  margin-top: -3rem;
+  border-radius: 50%;
+  background: $dark-color;
+  z-index: 99;
+
+  img {
+    width: 2.5rem;
+    position: relative;
+    top: 60%;
+    left: 50.5%;
+    transform: translate(-50%, -50%);
+  }
+}

@@ -1,3 +1,8 @@
 .iconStyling {
-    width: 3rem;
+  display: block;
+  width: 3rem;
+
+  &.hideIcons {
+    display: none;
+  }
 }

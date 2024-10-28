@@ -3,11 +3,13 @@
 @use "../../styles/placeholders";
 
 .headerStyling {
-    @include m.flexBox(column, center, center, 1rem);
-    background: $dark-color;
+  @include m.flexBox(column, center, center, 1rem);
+  background: $dark-color;
+  padding-bottom: 1.2rem;
 
-    h1 {
-        color: $gray-color;
-        @extend %headerFont;
-    }
+  h1 {
+    color: $gray-color;
+    @extend %headerFont;
+    margin-bottom: 0;
+  }
 }

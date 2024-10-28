@@ -1,0 +1,14 @@
+@use "../../../styles/variables" as *;
+
+.burgerStyling {
+  display: block;
+
+  .barStyling {
+    display: block;
+    margin: 4px 2px;
+    width: 20px;
+    height: 8px;
+    border-radius: 8px;
+    background: $gray-color;
+  }
+}
