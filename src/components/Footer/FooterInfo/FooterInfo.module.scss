@@ -1,0 +1,13 @@
+@use "../../../styles/variables" as *;
+
+.footerInfo {
+    align-self: center;
+    color: $gray-color;
+
+    &:nth-child(2) {
+        padding-right: 1.8rem;
+    }
+    &:nth-child(3) {
+        padding-right: 2.5rem;
+    }
+}

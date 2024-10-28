@@ -1,0 +1,13 @@
+@use "../../styles/mixins" as m;
+@use "../../styles/variables" as *;
+@use "../../styles/placeholders";
+
+.headerStyling {
+    @include m.flexBox(column, center, center, 1rem);
+    background: $dark-color;
+
+    h1 {
+        color: $gray-color;
+        @extend %headerFont;
+    }
+}

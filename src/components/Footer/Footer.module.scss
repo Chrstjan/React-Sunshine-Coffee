@@ -1,0 +1,9 @@
+@use "../../styles/mixins" as m;
+@use "../../styles/variables" as *;
+@use "../../styles/placeholders";
+
+.footerStyling {
+    @include m.flexBox(column, center, center, 1rem);
+    background: $dark-color;
+    padding-left: 2.5rem;
+}
