@@ -1,0 +1,37 @@
+@use "../../../styles/mixins" as m;
+@use "../../../styles/variables" as *;
+@use "../../../styles/placeholders";
+
+.selectionStyling {
+  @include m.flexBox(column, center, center, 1rem);
+  @extend %breadtextFont;
+  border: 1px solid #000;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  width: 15rem;
+  position: relative;
+
+  label {
+    @include m.flexBox(column, space-evenly, center, 0.3rem);
+  }
+
+  input[type="radio"] {
+    opacity: 0;
+    z-index: 22;
+  }
+
+  input:checked ~ .checkmark {
+    background: $dark-color;
+    border: 2px solid $gray-color;
+  }
+
+  .checkmark {
+    display: block;
+    width: 1rem;
+    height: 1rem;
+    background: $gray-color;
+    border-radius: 50%;
+    margin-top: -1.2rem;
+    margin-left: 0.19rem;
+  }
+}

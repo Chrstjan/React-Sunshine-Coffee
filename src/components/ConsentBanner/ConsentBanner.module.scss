@@ -1,0 +1,23 @@
+@use "../../styles/mixins" as m;
+@use "../../styles/variables" as *;
+@use "../../styles/placeholders";
+
+.consentBanner {
+  @include m.flexBox(column, center, center, 0.4rem);
+  padding: 0.5rem 2.5rem;
+  width: 12rem;
+  background: $gray-color;
+  border: 2px solid $dark-color;
+  border-radius: 8px;
+  @extend %breadtextFont;
+  text-align: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 99;
+
+  .buttonContainer {
+    @include m.flexBox(row, center, center, 0.5rem);
+  }
+}

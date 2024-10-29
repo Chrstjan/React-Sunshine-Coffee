@@ -9,10 +9,11 @@ import { Burgermenu } from "../components/Header/Burgermenu/Burgermenu";
 import { useState } from "react";
 import { HeaderCircle } from "../components/Header/HeaderCircle/HeaderCircle";
 import { ShoppingCart } from "../components/ShoppingCart/ShoppingCart";
+import { ConsentBanner } from "../components/ConsentBanner/ConsentBanner";
 
 export const MainLayout = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isCartShown, setIsCartShown] = useState(true);
+  const [isCartShown, setIsCartShown] = useState(false);
   return (
     <>
       <Header>
@@ -22,12 +23,16 @@ export const MainLayout = () => {
           <Button type="regionStyling" text="English" />
           <Icon src="./Cart.png" alt="Shopping Cart" isMenuOpen={isMenuOpen} />
           {/*Lappeløsning kunne ikke få action til at virke på icon :) */}
-          <Button type="shoppingButton" action={() => setIsCartShown((prev) => !prev)}/>
+          <Button
+            type="shoppingButton"
+            action={() => setIsCartShown((prev) => !prev)}
+          />
           <Icon src="./User.png" alt="User Account" isMenuOpen={isMenuOpen} />
         </Wrapper>
       </Header>
       <HeaderCircle isMenuOpen={isMenuOpen} />
-      <ShoppingCart isCartShown={isCartShown} setIsCartShown={setIsCartShown}/>
+      <ShoppingCart isCartShown={isCartShown} setIsCartShown={setIsCartShown} />
+      <ConsentBanner />
       <Outlet />
       <Footer>
         <FooterInfo

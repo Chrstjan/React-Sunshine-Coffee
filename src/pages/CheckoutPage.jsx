@@ -1,3 +1,12 @@
+import { CheckoutForm } from "../components/Checkout/CheckoutForm/CheckoutForm";
+import { CheckoutSelection } from "../components/Checkout/CheckoutSelection/CheckoutSelection";
+import { Wrapper } from "../components/Wrapper/Wrapper";
+
 export const CheckoutPage = () => {
-  return <div>CheckoutPage</div>;
+  return (
+    <Wrapper type="checkoutStyling">
+      <CheckoutForm />
+      <CheckoutSelection />
+    </Wrapper>
+  );
 };
