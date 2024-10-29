@@ -1,0 +1,49 @@
+@use "../../styles/mixins" as m;
+@use "../../styles/variables" as *;
+@use "../../styles/placeholders";
+
+h2 {
+    @extend %headerFont;
+    text-align: center;
+    font-size: 50px;
+    margin: 0;
+}
+
+.productStyling {
+    background: $product-card-color;
+    padding: 1rem 1rem;
+    border-radius: 8px;
+    @extend %breadtextFont;
+
+    h3 {
+        @extend %headerFont;
+        text-align: center;
+        font-size: 50px;
+        margin: 0;
+        padding: 1rem 0rem;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    .coffeeStyling {
+        @include m.flexBox(row, flex-start, center, 1rem);
+    }
+
+    .roastContainer {
+        @include m.flexBox(row, center, center, 0.2rem);
+
+        .roastStyling {
+            display: block;
+            width: 1rem;
+            height: 1rem;
+            border-radius: 50%;
+            background: $dark-color;
+
+            &.fillStyling {
+                background: $light-brown-color;
+            }
+        }
+    }
+}

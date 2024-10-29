@@ -1,2 +1,18 @@
+@use "../../styles/mixins" as m;
+@use "../../styles/variables" as *;
+@use "../../styles/placeholders";
+
 .TestimonyStyling {
+    padding: 1rem 1rem;
+    text-align: center;
+
+    h2 {
+        @extend %headerFont;
+        font-size: 60px;
+        margin: 0;
+    }
+    .testimoniesStyling {
+        @include m.flexBox(column, center, center, 0.5rem);
+        @extend %breadtextFont;
+    }
 }

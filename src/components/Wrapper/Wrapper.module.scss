@@ -3,4 +3,8 @@
 .wrapperStyling {
   @include m.flexBox(column, center, center, 1rem);
   margin-bottom: 1rem;
+
+  &.productWrapper {
+    margin-top: 2rem;
+  }
 }

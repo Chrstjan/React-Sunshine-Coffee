@@ -10,3 +10,20 @@
   margin-bottom: 1rem;
   @extend %headerbuttonFont;
 }
+
+.shopButton {
+  background: $dark-color;
+  color: $gray-color;
+  @extend %breadtextFont;
+  border: 0;
+  border-radius: 8px;
+  padding: 0.9rem 2.5rem;
+}
+
+.cartButton {
+  background: transparent;
+  border: 2px solid $dark-color;
+  border-radius: 8px;
+  padding: 0.8rem 4rem;
+  margin-left: 2rem;
+}

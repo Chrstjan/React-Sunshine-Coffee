@@ -1,0 +1,26 @@
+@use "../../styles/mixins" as m;
+@use "../../styles/variables" as *;
+@use "../../styles/placeholders";
+
+.showcaseStyling {
+    @include m.flexBox(column, center, center, 1rem);
+
+    figure {
+
+        h3 {
+            @extend %headerFont;
+            text-align: center;
+            font-size: 40px;
+            margin: 0;
+        }
+
+        p {
+            @extend %breadtextFont;
+            text-align: center;
+        }
+
+        img {
+            width: 100%;
+        }
+    }
+}
