@@ -27,3 +27,13 @@
   padding: 0.8rem 4rem;
   margin-left: 2rem;
 }
+
+//Lappeløsning kunne ikke få action til at virke på icon :)
+.shoppingButton {
+  display: block;
+  position: absolute;
+  top: 28%;
+  padding: 2rem;
+  background: transparent;
+  border: 0;
+}

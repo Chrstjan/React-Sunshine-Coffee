@@ -8,21 +8,26 @@ import { FooterInfo } from "../components/Footer/FooterInfo/FooterInfo";
 import { Burgermenu } from "../components/Header/Burgermenu/Burgermenu";
 import { useState } from "react";
 import { HeaderCircle } from "../components/Header/HeaderCircle/HeaderCircle";
+import { ShoppingCart } from "../components/ShoppingCart/ShoppingCart";
 
 export const MainLayout = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isCartShown, setIsCartShown] = useState(true);
   return (
     <>
       <Header>
         <h1>Sunshine Coffee</h1>
         <Wrapper>
           <Burgermenu setIsMenuOpen={setIsMenuOpen} />
-          <Button type="regionStyling" text="Europa" />
+          <Button type="regionStyling" text="English" />
           <Icon src="./Cart.png" alt="Shopping Cart" isMenuOpen={isMenuOpen} />
+          {/*Lappeløsning kunne ikke få action til at virke på icon :) */}
+          <Button type="shoppingButton" action={() => setIsCartShown((prev) => !prev)}/>
           <Icon src="./User.png" alt="User Account" isMenuOpen={isMenuOpen} />
         </Wrapper>
       </Header>
       <HeaderCircle isMenuOpen={isMenuOpen} />
+      <ShoppingCart isCartShown={isCartShown} setIsCartShown={setIsCartShown}/>
       <Outlet />
       <Footer>
         <FooterInfo

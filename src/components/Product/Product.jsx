@@ -1,9 +1,16 @@
 import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { CartContext } from "../../context/CartContext";
 import { Button } from "../Button/Button"
 import s from "./Product.module.scss";
 
 export const Product = ({data, title, withDescription}) => {
     const navigate = useNavigate();
+
+    const {shoppingCart, addToCart} = useContext(CartContext)
+
+    console.log(shoppingCart);
+    
 
     const handleViewProduct = (item) => {
         console.log(item);
@@ -34,7 +41,7 @@ export const Product = ({data, title, withDescription}) => {
                     {withDescription ? <p>{item.description}</p> : null}
                     <p>{item.price} DKK</p>
                     {withDescription ? <p>Stock: {item.stock}</p> : null}
-                    <Button type="cartButton" text="Add to cart"/>
+                    <Button type="cartButton" action={() => addToCart(item)} text="Add to cart"/>
                 </figcaption>
             </figure>
         )

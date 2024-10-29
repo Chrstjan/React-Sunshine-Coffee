@@ -1,0 +1,73 @@
+@use "../../styles/mixins" as m;
+@use "../../styles/variables" as *;
+
+.overlayStyling {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    background: #1d1d1d55;
+    z-index: 99;
+}
+
+.hideOverlay {
+    display: none;
+}
+
+.cartStyling {
+    display: block;
+    height: 100vh;
+    width: 12rem;
+    background: $gray-color;
+    position: absolute;
+    right: 0;
+    z-index: 999;
+
+    button {
+        background: transparent;
+        border: 0;
+        margin: 0.5rem 0rem 0rem 0.4rem;
+        font-size: 20px;
+    }
+
+    span {
+        @include m.flexBox(row, center, center, 0.5rem);
+        padding: 0rem 1rem;
+
+        .amountContainer {
+            @include m.flexBox(row, center, center, 0.2rem);
+            border-bottom: 2px solid #000;
+
+            button {
+                padding-bottom: 0.6rem;
+            }
+
+            p {
+                border: 1px solid $dark-color;
+                padding: 0.1rem 0.2rem;
+            }
+        }
+    }
+
+    .checkoutStyling {
+        @include m.flexBox(column, center, center, 0.5rem);
+
+        p {
+            margin: 0;
+        }
+    }
+
+    .checkoutContainer {
+        margin-top: 1.5rem;
+        @include m.flexBox(column, center, center, 1rem);
+
+        p {
+            text-align: center;
+            margin: 0;
+        }
+    }
+}
+
+.hideCart {
+    display: none;
+}
