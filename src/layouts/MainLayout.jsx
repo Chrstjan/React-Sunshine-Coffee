@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import { Header } from "../components/Header/Header";
 import { Wrapper } from "../components/Wrapper/Wrapper";
 import { Button } from "../components/Button/Button";
@@ -17,8 +17,10 @@ export const MainLayout = () => {
   return (
     <>
       <Header>
-        <h1>Sunshine Coffee</h1>
-        <Wrapper>
+        <Link to="/">
+          <h1>Sunshine Coffee</h1>
+        </Link>
+        <Wrapper type="iconWrapper">
           <Burgermenu setIsMenuOpen={setIsMenuOpen} />
           <Button type="regionStyling" text="English" />
           <Icon src="./Cart.png" alt="Shopping Cart" isMenuOpen={isMenuOpen} />
@@ -27,7 +29,9 @@ export const MainLayout = () => {
             type="shoppingButton"
             action={() => setIsCartShown((prev) => !prev)}
           />
-          <Icon src="./User.png" alt="User Account" isMenuOpen={isMenuOpen} />
+          <Link to="/login">
+            <Icon src="./User.png" alt="User Account" isMenuOpen={isMenuOpen} />
+          </Link>
         </Wrapper>
       </Header>
       <HeaderCircle isMenuOpen={isMenuOpen} />
@@ -48,6 +52,7 @@ export const MainLayout = () => {
           linkTwo="Return policy"
           linkThree="Shipping"
           linkFour="Terms and Conditions"
+          pageLink="/cookie-policy"
         />
         <FooterInfo
           headerText="About"

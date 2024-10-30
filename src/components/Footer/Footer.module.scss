@@ -6,4 +6,11 @@
     @include m.flexBox(column, center, center, 1rem);
     background: $dark-color;
     padding-left: 2.5rem;
+
+    @media (min-width: 1200px) {
+        flex-direction: row;
+        justify-content: space-evenly;
+        gap: 1.5rem;
+        padding: 1rem 0rem;
+    }
 }

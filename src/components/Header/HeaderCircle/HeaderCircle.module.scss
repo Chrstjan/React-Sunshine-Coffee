@@ -13,6 +13,13 @@
   background: $dark-color;
   z-index: 99;
 
+  @media (min-width: 1200px) {
+    top: 8.4%;
+    left: 46.5%;
+    width: 7.3rem;
+    height: 7.3rem;
+  }
+
   &.openStyling {
     top: 44.8%;
   }
@@ -23,5 +30,10 @@
     top: 60%;
     left: 50.5%;
     transform: translate(-50%, -50%);
+
+    @media (min-width: 1200px) {
+      width: 3.5rem;
+      top: 57%;
+    }
   }
 }

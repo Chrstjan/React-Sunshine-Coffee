@@ -10,6 +10,11 @@
   background-repeat: no-repeat;
   background-size: cover;
 
+  @media (min-width: 1200px) {
+    width: 98.9vw;
+    height: 53vh;
+  }
+
   h2,
   h3 {
     margin: 0;
@@ -22,5 +27,9 @@
     text-shadow: 1px 1px $dark-color;
     font-size: 37px;
     @extend %headerFont;
+
+    @media (min-width: 1200px) {
+      font-size: 50px;
+    }
   }
 }

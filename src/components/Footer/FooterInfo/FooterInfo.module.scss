@@ -6,6 +6,17 @@
   color: $gray-color;
   @extend %breadtextFont;
 
+  @media (min-width: 1200px) {
+    p {
+      margin: 0;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    color: $gray-color;
+  }
+
   &:nth-child(2) {
     padding-right: 1.8rem;
   }

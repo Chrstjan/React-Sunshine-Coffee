@@ -7,9 +7,23 @@
   background: $dark-color;
   padding-bottom: 1.2rem;
 
+  @media (min-width: 1200px) {
+    flex-direction: row;
+    justify-content:space-around;
+  }
+
   h1 {
     color: $gray-color;
     @extend %headerFont;
     margin-bottom: 0;
+
+    @media (min-width: 1200px) {
+      margin-left: 33rem;
+      font-size: 40px;
+    }
+  }
+
+  a {
+    text-decoration: none;
   }
 }

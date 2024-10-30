@@ -5,7 +5,25 @@
 .showcaseStyling {
     @include m.flexBox(column, center, center, 1rem);
 
+    @media (min-width: 1200px) {
+        flex-direction: row;
+    }
+
     figure {
+        @media (min-width: 1200px) {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            max-width: 500px;
+            
+            &:nth-child(2) {
+                img {
+                    max-height: 251px;
+                    height: 251px;
+                }
+            }
+        }
 
         h3 {
             @extend %headerFont;
@@ -21,6 +39,12 @@
 
         img {
             width: 100%;
+            margin-top: auto;
+            object-fit: cover;
+
+            @media (min-width: 1200px) {
+                max-height: 250px;
+            }
         }
     }
 }

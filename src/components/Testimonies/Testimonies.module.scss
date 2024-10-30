@@ -14,5 +14,15 @@
     .testimoniesStyling {
         @include m.flexBox(column, center, center, 0.5rem);
         @extend %breadtextFont;
+
+        @media (min-width: 1200px) {
+            padding: 2rem 2rem;
+            flex-direction: row;
+            gap: 2rem;
+
+            p {
+                width: 180px;
+            }
+        }
     }
 }

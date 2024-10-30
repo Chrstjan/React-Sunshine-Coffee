@@ -4,5 +4,9 @@
 
   &.hideIcons {
     display: none;
+
+    @media (min-width: 1200px) {
+      display: block;
+    }
   }
 }
