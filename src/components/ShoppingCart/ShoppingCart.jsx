@@ -2,6 +2,7 @@ import { useContext } from "react"
 import { CartContext } from "../../context/CartContext"
 import { Button } from "../Button/Button";
 import s from "./ShoppingCart.module.scss";
+import { Link } from "react-router-dom";
 
 export const ShoppingCart = ({isCartShown, setIsCartShown}) => {
     const {shoppingCart, addToCart, subtractCartItem, removeFromCart, clearCart} = useContext(CartContext);
@@ -37,7 +38,9 @@ export const ShoppingCart = ({isCartShown, setIsCartShown}) => {
     </div>
     <span className={s.checkoutContainer}>
         <p>Items in Cart: {shoppingCart.length}</p>
-        <Button text="Go to Checkout"/>
+        <Link to="/checkout">
+            <Button text="Go to Checkout"/>
+        </Link>
     </span>
     </div>
     </>

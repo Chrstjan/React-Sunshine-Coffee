@@ -142,7 +142,7 @@ export const CheckoutForm = () => {
         />
         {errors.country ? <span>{errors.country.message}</span> : null}
 
-        <input type="submit" value="Pay now" />
+        <input className={s.payButton} type="submit" value="Pay now" />
       </form>
     </div>
   );

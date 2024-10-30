@@ -1,0 +1,32 @@
+@use "../../styles/mixins" as m;
+@use "../../styles/variables" as *;
+@use "../../styles/placeholders";
+
+.formStyling {
+    @include m.flexBox(column, center, center, 1rem);
+
+    label {
+        align-self: flex-start;
+    }
+
+    input {
+        @extend %formInput;
+        width: 16rem;
+    }
+
+    span {
+        @include m.flexBox(row, center, center, 0.5rem);
+
+        button {
+            padding: 0.7rem;
+            border-radius: 8px;
+            background: transparent;
+            width: 8rem;
+        }
+
+        input {
+            @extend %submitInput;
+            width: 8rem;
+        }
+    }
+}

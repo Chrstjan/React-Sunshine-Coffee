@@ -1,3 +1,8 @@
+import { LoginForm } from "../components/LoginForm/LoginForm";
+import { Wrapper } from "../components/Wrapper/Wrapper"
+
 export const LoginPage = () => {
-  return <div>LoginPage</div>;
+  return <Wrapper type="productWrapper">
+    <LoginForm headerText="Login" link="/signup" linkText="Sign up"/>
+  </Wrapper>;
 };

@@ -10,6 +10,7 @@
   padding: 0.5rem 1rem;
   width: 15rem;
   position: relative;
+  margin-bottom: 4rem;
 
   label {
     @include m.flexBox(column, space-evenly, center, 0.3rem);

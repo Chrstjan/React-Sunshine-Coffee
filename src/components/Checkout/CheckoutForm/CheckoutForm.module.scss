@@ -11,9 +11,13 @@
     }
 
     input {
-      padding: 0.7rem;
-      border-radius: 8px;
-      border: 1px solid $dark-color;
+      @extend %formInput;
+    }
+
+    .payButton {
+      @extend %submitInput;
+      position: absolute;
+      bottom: -120%;
     }
   }
 }

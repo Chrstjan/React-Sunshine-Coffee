@@ -1,5 +1,7 @@
+@use "./variables" as *;
 @import url('https://fonts.googleapis.com/css2?family=Inika:wght@400;700&family=Licorice&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
 
 %headerFont {
   font-family: "Licorice", cursive;
@@ -23,4 +25,17 @@
     font-family: "Inika", serif;
     font-weight: 700;
     font-style: normal;
+}
+
+%formInput {
+  padding: 0.7rem;
+  border-radius: 8px;
+  border: 1px solid $dark-color;
+}
+
+%submitInput {
+  background: $dark-color;
+  color: $gray-color;
+  width: 12rem;
+  @extend %breadtextFont;
 }
