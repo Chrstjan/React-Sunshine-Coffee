@@ -7,7 +7,7 @@ export const CookiePolicyPage = () => {
     }, [])
   return (
     <Wrapper type="cookiePolicy">
-        <header>
+        <header style={{marginTop: "2rem"}}>
             <h2>Sunshine Coffee Cookie Policy</h2>
         </header>
         <p>At Sunshine Coffee, we strive to provide a personalized, user-friendly experience on our website. This Cookie Policy explains how we use cookies and similar tracking technologies to recognize you when you visit our website. It details what cookies are, why we use them, and how you can control your cookie preferences.</p>

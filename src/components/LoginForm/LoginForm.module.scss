@@ -12,6 +12,10 @@
     input {
         @extend %formInput;
         width: 16rem;
+
+        @media (min-width: 1200px) {
+            width: 20rem;
+        }
     }
 
     span {
@@ -27,6 +31,11 @@
         input {
             @extend %submitInput;
             width: 8rem;
+
+            &:hover {
+                scale: 1.1;
+                cursor: pointer;
+            }
         }
     }
 }

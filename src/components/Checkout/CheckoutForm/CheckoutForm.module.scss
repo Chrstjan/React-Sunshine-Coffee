@@ -3,6 +3,13 @@
 @use "../../../styles/placeholders";
 
 .formStyling {
+  h2 {
+   @media (min-width: 1200px) {
+    position: absolute;
+    left: 46%;
+   }
+  }
+
   form {
     @include m.flexBox(column, center, center, 1rem);
 
@@ -17,7 +24,8 @@
     .payButton {
       @extend %submitInput;
       position: absolute;
-      bottom: -120%;
+      bottom: -15%;
+      right: 11%;
     }
   }
 }

@@ -6,6 +6,10 @@
     @extend %breadtextFont;
     text-align: center;
 
+    @media (min-width: 1200px) {
+        margin-bottom: 12rem;
+    }
+
     .productStyling {
         @include m.flexBox(row, center, center, 1rem);
         border-bottom: 1px solid #000;

@@ -2,11 +2,22 @@
 @use "../../styles/variables" as *;
 @use "../../styles/placeholders";
 
+
 h2 {
     @extend %headerFont;
     text-align: center;
     font-size: 50px;
     margin: 0;
+}
+
+.productContainer {
+    @include m.flexBox(column, center, center, 1rem);
+
+    @media (min-width: 1200px) {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+    }
 }
 
 .productStyling {
@@ -23,8 +34,17 @@ h2 {
         padding: 1rem 0rem;
     }
 
+    .infoContainer {
+        @media (min-width: 1200px) {
+            padding: 0rem 2rem;
+        }
+    }
+
     img {
         width: 100%;
+        object-fit: cover;
+        max-height: 260px;
+        border-radius: 8px;
     }
 
     .coffeeStyling {
@@ -44,6 +64,21 @@ h2 {
             &.fillStyling {
                 background: $light-brown-color;
             }
+        }
+    }
+
+    figcaption {
+        p{
+            @media (min-width: 1200px) {
+                padding-left: 2rem;
+            }
+        }
+    }
+
+    @media (min-width: 1200px) {
+        &.singleProduct {
+            width: 500px;
+            margin-top: 6rem;
         }
     }
 }

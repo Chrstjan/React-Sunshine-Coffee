@@ -5,10 +5,12 @@ import { Wrapper } from "../components/Wrapper/Wrapper";
 
 export const CheckoutPage = () => {
   return (
-    <Wrapper type="checkoutStyling">
+    <Wrapper type="checkoutWrapper">
       <CheckoutForm />
-      <CheckoutProducts />
-      <CheckoutSelection />
+      <div className="checkoutContainer">
+        <CheckoutProducts />
+        <CheckoutSelection />
+      </div>
     </Wrapper>
   );
 };

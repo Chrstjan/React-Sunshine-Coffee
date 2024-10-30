@@ -19,6 +19,6 @@ export const ProductPage = () => {
   }
     
   return <Wrapper type="productWrapper">
-    <Product data={[data]} withDescription={true}/>
+    <Product data={[data]} withDescription={true} cardType="singleProduct"/>
   </Wrapper>;
 };

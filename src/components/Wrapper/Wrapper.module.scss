@@ -23,6 +23,26 @@
     margin-top: 3rem;
   }
 
+  &.loginWrapper {
+    @media (min-width: 1200px) {
+      margin: 9rem 0rem;
+    }
+  }
+
+  &.checkoutWrapper {
+
+    @media (min-width: 1200px) {
+      margin: 9rem 0rem;
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 0rem 9rem;
+    }
+
+    .checkoutContainer {
+      background: red;
+    }
+  }
+
   &.cookiePolicy {
     margin-top: 3rem;
     padding: 1rem 1rem;
