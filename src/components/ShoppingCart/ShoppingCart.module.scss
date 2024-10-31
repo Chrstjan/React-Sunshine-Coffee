@@ -1,11 +1,14 @@
 @use "../../styles/mixins" as m;
 @use "../../styles/variables" as *;
+@use "../../styles/placeholders";
+@use "../../styles/animations";
 
 .overlayStyling {
     display: block;
     width: 100vw;
     height: 100vh;
-    position: absolute;
+    position: fixed;
+    top: 0;
     background: #1d1d1d55;
     z-index: 99;
 
@@ -19,22 +22,61 @@
 }
 
 .cartStyling {
+    animation: shoppingCart 0.3s forwards linear;
     display: block;
     height: 100vh;
     width: 12rem;
     background: $gray-color;
+    @extend %breadtextFont;
     top: 0;
-    position: absolute;
+    position: fixed;
     right: 0;
     z-index: 999;
 
     @media (min-width: 1200px) {
-        width: 35vw;
+        width: 25vw;
+    }
+
+    p {
+        text-align: center;
+    }
+
+    .productStyling {
+        @include m.flexBox(column, center, center, 0.5rem);
+        @media (min-width: 1200px) {
+            margin-top: 3rem;
+        }
+
+        .product {
+            @include m.flexBox(row, center, center, 0.4rem);
+
+            @media (min-width: 1200px) {
+                gap: 3rem;
+            }
+        }
+
+        .productLine {
+            display: block;
+            width: 36vw;
+            height: 0.1rem;
+            background: #00000099;
+
+            @media (min-width: 1200px) {
+                width: 17vw;
+            }
+        }
+    }
+
+    .priceContainer {
+        padding-left: 1.4rem;
+        @include m.flexBox(column, center, flex-start, 0.5rem);
+
+        @media (min-width: 1200px) {
+            margin-top: 1.5rem;
+        }
     }
 
     button {
-        background: transparent;
-        border: 0;
         margin: 0.5rem 0rem 0rem 0.4rem;
         font-size: 20px;
     }
@@ -45,7 +87,6 @@
 
         .amountContainer {
             @include m.flexBox(row, center, center, 0.2rem);
-            border-bottom: 2px solid #000;
 
             button {
                 padding-bottom: 0.6rem;
@@ -61,6 +102,15 @@
     .checkoutStyling {
         @include m.flexBox(column, center, center, 0.5rem);
 
+        @media (min-width: 1200px) {
+            flex-direction: row;
+            gap: 17.5rem;
+
+            &.taxCheckout {
+                gap: 15.8rem;
+            }
+        }
+
         p {
             margin: 0;
         }
@@ -71,8 +121,23 @@
         @include m.flexBox(column, center, center, 1rem);
 
         p {
-            text-align: center;
             margin: 0;
+        }
+
+        button {
+            background: $dark-brown-color;
+        }
+
+        div {
+            @media (min-width: 1200px) {
+                margin-top: 2rem;
+                @include m.flexBox(row, space-between, center, 9rem);
+            }
+
+            button {
+                margin-bottom: 0.6rem;
+                background: $dark-color;
+            }
         }
     }
 }

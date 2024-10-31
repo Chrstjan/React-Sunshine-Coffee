@@ -6,7 +6,7 @@ export const CheckoutProducts = () => {
     const {shoppingCart} = useContext(CartContext);
   return (
     <div className={s.productContainer}>
-        {shoppingCart.map((item) => {
+        {shoppingCart.length > 0 ? shoppingCart.map((item) => {
             return (
                 <div key={item.id} className={s.productStyling}>
                     <span>
@@ -16,8 +16,8 @@ export const CheckoutProducts = () => {
                     <p>{item.price * item.quantity} DKK</p>
                 </div>
             )
-        })}
-        <p className={s.totalPrice}>Total: {shoppingCart.reduce((acc, item) => acc + item.price * item.quantity, 0)} DKK</p>
+        }) : <p>Cart empty</p>}
+        {shoppingCart.length > 0 ? <p className={s.totalPrice}>Total: {shoppingCart.reduce((acc, item) => acc + item.price * item.quantity, 0)} DKK</p> : null}
     </div>
   )
 }

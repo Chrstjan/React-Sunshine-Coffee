@@ -7,41 +7,54 @@ import { Link } from "react-router-dom";
 export const ShoppingCart = ({isCartShown, setIsCartShown}) => {
     const {shoppingCart, addToCart, subtractCartItem, removeFromCart, clearCart} = useContext(CartContext);
 
+    const totalPrice = shoppingCart.reduce((acc, item) => acc + item.price * item.quantity, 0)
+    const tax = totalPrice * 0.25;
+    const totalWithTax = totalPrice + tax;
+
   return (
     <>
     <div className={`${isCartShown ? s.overlayStyling : s.hideOverlay}`}></div>
     <div className={`${isCartShown ? s.cartStyling : s.hideCart}`}>
-        <Button action={() => setIsCartShown(prev => !prev)} text="X"/>
+        <Button type="modalButton" action={() => setIsCartShown(prev => !prev)} text="X"/>
         <h2>Shopping Cart</h2>
-        {shoppingCart.map((item) => {
-        return (
-            <span key={item.id}>
-                <h5>{item.name}</h5>
-                <div className={s.amountContainer}>
-                    <Button action={() => subtractCartItem(item)} text="-"/>
+        {shoppingCart.length > 0 ? shoppingCart.map((item) => {
+            return (
+            <span className={s.productStyling} key={item.id}>
+                <div className={s.product}>
+                 <span className={s.productInfo}>
+                  <h5>{item.name}</h5>
+                  <div className={s.amountContainer}>
+                    <Button type="modalButton" action={() => subtractCartItem(item)} text="-"/>
                     <p>{item.quantity}</p>
-                    <Button text="+" action={() => addToCart(item)}/>
+                    <Button type="modalButton" text="+" action={() => addToCart(item)}/>
+                  </div>
+                 </span>
+                 <p>{item.price * item.quantity} DKK</p>
                 </div>
-                <p>{item.price * item.quantity} DKK</p>
+                <span className={s.productLine}></span>
             </span>
-        )
-    })}
-    <div>
-        <span>
+            )
+        }) : <p>Your cart is empty</p>}
+        {shoppingCart.length > 0 ? 
+        <div className={s.priceContainer}>
+         <span className={`${s.checkoutStyling} ${s.taxCheckout}`}>
             <p>Tax (25%)</p>
-        </span>
-        <span className={s.checkoutStyling}>
+            <p>{tax} DKK</p>
+         </span>
+         <span className={s.checkoutStyling}>
             <p>Total:</p>
-            <p>{shoppingCart.reduce((acc, item) => acc + item.price * item.quantity, 0)} DKK</p>
+            <p>{totalWithTax} DKK</p>
+         </span>
+        </div> : null}
+        <span className={s.checkoutContainer}>
+         <Button type="shopButton" action={() => clearCart()} text="Clear Cart"/>
+         <div>
+          <p>Items in Cart: {shoppingCart.length}</p>
+          <Link to="/checkout">
+            <Button type="shopButton" text="Go to Checkout"/>
+          </Link>
+         </div>
         </span>
-        <Button type="" action={() => clearCart()} text="Clear Cart"/>
-    </div>
-    <span className={s.checkoutContainer}>
-        <p>Items in Cart: {shoppingCart.length}</p>
-        <Link to="/checkout">
-            <Button text="Go to Checkout"/>
-        </Link>
-    </span>
     </div>
     </>
   )
