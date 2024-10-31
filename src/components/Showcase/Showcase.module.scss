@@ -25,6 +25,14 @@
             }
         }
 
+        @media (min-width: 1400px) {
+            &:nth-child(3) {
+                img {
+                    margin-top: 1rem
+                }
+            }
+        }
+
         h3 {
             @extend %headerFont;
             text-align: center;

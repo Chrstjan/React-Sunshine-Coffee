@@ -12,8 +12,18 @@
   position: relative;
   margin-bottom: 4rem;
 
+  @media (min-width: 1200px) {
+    padding: 2rem 5rem;
+  }
+
   label {
     @include m.flexBox(column, space-evenly, center, 0.3rem);
+
+    @media (min-width: 1200px) {
+      width: 260px;
+      flex-direction: row;
+      justify-content: space-between;
+    }
   }
 
   input[type="radio"] {
@@ -34,5 +44,13 @@
     border-radius: 50%;
     margin-top: -1.2rem;
     margin-left: 0.19rem;
+
+    @media (min-width: 1200px) {
+      margin: 0;
+      margin-left: 5.5rem;
+      &.firstCheckmark {
+        margin-left: 8.5rem;
+      }
+    }
   }
 }

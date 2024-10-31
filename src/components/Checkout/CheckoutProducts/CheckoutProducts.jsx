@@ -9,13 +9,15 @@ export const CheckoutProducts = () => {
         {shoppingCart.map((item) => {
             return (
                 <div key={item.id} className={s.productStyling}>
-                    <p>{item.name}</p>
-                    <p>x {item.quantity}</p>
+                    <span>
+                     <p>{item.name}</p>
+                     <p>x {item.quantity}</p>
+                    </span>
                     <p>{item.price * item.quantity} DKK</p>
                 </div>
             )
         })}
-        <p>Total: {shoppingCart.reduce((acc, item) => acc + item.price * item.quantity, 0)} DKK</p>
+        <p className={s.totalPrice}>Total: {shoppingCart.reduce((acc, item) => acc + item.price * item.quantity, 0)} DKK</p>
     </div>
   )
 }

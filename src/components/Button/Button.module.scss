@@ -17,6 +17,11 @@ button {
   color: $gray-color;
   margin-bottom: 1rem;
   @extend %headerbuttonFont;
+
+  @media (min-width: 1200px) {
+    align-self: flex-end;
+    
+  }
 }
 
 .shopButton {
@@ -38,6 +43,18 @@ button {
   @media (min-width: 1200px) {
     padding: 0.8rem 5rem;
     margin-left: 5rem;
+  }
+}
+
+.payButton {
+  @extend %submitInput;
+  padding: 0.7rem;
+  margin-left: 3rem;
+  border: 0;
+  border-radius: 8px;
+
+  @media (min-width: 1200px) {
+    margin-left: 13.3rem;
   }
 }
 

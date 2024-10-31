@@ -7,11 +7,29 @@
     text-align: center;
 
     @media (min-width: 1200px) {
-        margin-bottom: 12rem;
+        padding-bottom: 3rem;
+        margin-bottom: 6rem;
     }
 
     .productStyling {
         @include m.flexBox(row, center, center, 1rem);
         border-bottom: 1px solid #000;
+
+        span {
+            @include m.flexBox(row, center, center, 1rem);
+        }
+
+        @media (min-width: 1200px) {
+            span {
+                padding-right: 14rem;
+            }
+        }
+    }
+
+    .totalPrice {
+        @media (min-width: 1200px) {
+            margin-top: 4rem;
+            text-align: left;
+        }
     }
 }

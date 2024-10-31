@@ -21,12 +21,11 @@ export const CheckoutForm = () => {
 
   return (
     <div className={s.formStyling}>
-      <h2>Checkout</h2>
       <form onSubmit={handleSubmit(handleCheckout)}>
         <label htmlFor="firstname">First name</label>
         <input
           {...register("firstname", {
-            required: "Fullname is required",
+            required: "First name is required",
             pattern: {
               message: "Invalid name format",
             },
@@ -43,13 +42,13 @@ export const CheckoutForm = () => {
         <label htmlFor="lastname">Last name</label>
         <input
           {...register("lastname", {
-            required: "Lastname is required",
+            required: "Last name is required",
             pattern: {
               message: "Invalid name format",
             },
             minLength: {
-              value: 8,
-              message: "Must be at least 8 characters",
+              value: 5,
+              message: "Must be at least 5 characters",
             },
           })}
           type="text"
@@ -142,7 +141,7 @@ export const CheckoutForm = () => {
         />
         {errors.country ? <span>{errors.country.message}</span> : null}
 
-        <input className={s.payButton} type="submit" value="Pay now" />
+        {/* <input className={s.payButton} type="submit" value="Pay now" /> */}
       </form>
     </div>
   );

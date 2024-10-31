@@ -5,6 +5,8 @@ import { Wrapper } from "../components/Wrapper/Wrapper";
 
 export const CheckoutPage = () => {
   return (
+    <>
+    <h2 style={{marginTop: "7rem", paddingRight: "1rem"}}>Checkout</h2>
     <Wrapper type="checkoutWrapper">
       <CheckoutForm />
       <div className="checkoutContainer">
@@ -12,5 +14,6 @@ export const CheckoutPage = () => {
         <CheckoutSelection />
       </div>
     </Wrapper>
+    </>
   );
 };

@@ -1,7 +1,11 @@
+import { useContext } from "react";
+import { Button } from "../../Button/Button"
 import s from "./CheckoutSelection.module.scss";
+import { CartContext } from "../../../context/CartContext";
 
 export const CheckoutSelection = () => {
   return (
+    <>
     <div className={s.selectionStyling}>
       <header>
         <h4>Choose shipping</h4>
@@ -9,18 +13,20 @@ export const CheckoutSelection = () => {
       <label htmlFor="fakeEx">
         FakeEx
         <input type="radio" id="fakeEx" name="shipping" value="fakeEx" />
-        <span className={s.checkmark}></span>
+        <span className={`${s.checkmark} ${s.firstCheckmark}`}></span>
       </label>
       <label htmlFor="fakeExExpress">
-        fakeEx Express
+        FakeEx Express
         <input
           type="radio"
           id="fakeExExpress"
           name="shipping"
           value="fakeExExpress"
         />
-        <span className={s.checkmark}></span>
+        <span className={`${s.checkmark} ${s.secondCheckmark}`}></span>
       </label>
     </div>
+    <Button type="payButton" text="Pay Now"/>
+    </>
   );
 };

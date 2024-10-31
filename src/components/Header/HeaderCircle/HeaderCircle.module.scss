@@ -20,6 +20,10 @@
     height: 7.3rem;
   }
 
+  @media (min-width: 1400px) {
+    top: 7%;
+  }
+
   &.openStyling {
     top: 44.8%;
   }

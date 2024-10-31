@@ -31,10 +31,13 @@
 
   &.checkoutWrapper {
 
+    margin-top: 3.5rem;
+
     @media (min-width: 1200px) {
-      margin: 9rem 0rem;
+      margin: 4rem 0rem;
       flex-direction: row;
-      justify-content: space-between;
+      justify-content: center;
+      gap: 12rem;
       padding: 0rem 9rem;
     }
 

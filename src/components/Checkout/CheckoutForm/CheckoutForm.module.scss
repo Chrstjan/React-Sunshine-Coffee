@@ -19,6 +19,10 @@
 
     input {
       @extend %formInput;
+
+      @media (min-width: 1200px) {
+        width: 21rem;
+      }
     }
 
     .payButton {
