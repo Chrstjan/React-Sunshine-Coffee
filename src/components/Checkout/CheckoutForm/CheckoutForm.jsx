@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 export const CheckoutForm = ({ setIsFormValid }) => {
   const [data, setData] = useState();
 
+  //Bruger react hook form til at validere inputs
   const {
     register,
     handleSubmit,

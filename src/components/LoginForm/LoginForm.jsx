@@ -5,6 +5,7 @@ import { Button } from "../Button/Button"
 import s from "./LoginForm.module.scss"
 
 export const LoginForm = ({headerText, formRoute, link, linkText, user, setUser}) => {
+    //Bruger react hook form til at validere inputs
     const {
         register,
         handleSubmit,

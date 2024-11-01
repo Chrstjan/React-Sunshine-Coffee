@@ -35,6 +35,10 @@ button {
   @media (min-width: 1200px) {
     padding: 1rem 4rem;
   }
+
+  @media (min-width: 1400px) {
+    padding: 1rem;
+  }
 }
 
 .cartButton {
@@ -42,7 +46,11 @@ button {
   border: 2px solid $dark-color;
   border-radius: 8px;
   padding: 0.8rem 4rem;
-  margin-left: 2rem;
+  margin-left: 1.3rem;
+
+  @media (min-width: 500px) {
+    margin-left: 5rem;
+  }
 
   @media (min-width: 720px) {
     padding: 0.8rem 5rem;

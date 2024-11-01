@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 export const ShoppingCart = ({isCartShown, setIsCartShown}) => {
     const {shoppingCart, addToCart, subtractCartItem, removeFromCart, clearCart} = useContext(CartContext);
 
+    //Bruger reducer til at regne priser sammen og gange det med antal af produkter
     const totalPrice = shoppingCart.reduce((acc, item) => acc + item.price * item.quantity, 0)
     const tax = totalPrice * 0.25;
     const totalWithTax = totalPrice + tax;

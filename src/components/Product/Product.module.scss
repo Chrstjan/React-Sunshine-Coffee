@@ -10,6 +10,10 @@ h2 {
     margin: 0;
 }
 
+h3 {
+    cursor: pointer;
+}
+
 .productContainer {
     @include m.flexBox(column, center, center, 1rem);
 
@@ -27,9 +31,13 @@ h2 {
 
 .productStyling {
     background: $product-card-color;
-    padding: 1rem 1rem;
+    padding: 1rem 1.9rem;
     border-radius: 8px;
     @extend %breadtextFont;
+
+    @media (min-width: 500px) {
+        min-width: 350px;
+    }
 
     h3 {
         @extend %headerFont;
