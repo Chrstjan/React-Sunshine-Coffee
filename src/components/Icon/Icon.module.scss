@@ -1,11 +1,16 @@
 .iconStyling {
   display: block;
   width: 3rem;
+  cursor: pointer;
+
+  &:hover {
+    scale: 1.1;
+  }
 
   &.hideIcons {
     display: none;
 
-    @media (min-width: 1200px) {
+    @media (min-width: 720px) {
       display: block;
     }
   }

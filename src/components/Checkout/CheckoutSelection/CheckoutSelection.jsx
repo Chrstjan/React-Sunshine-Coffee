@@ -2,8 +2,9 @@ import { useContext } from "react";
 import { Button } from "../../Button/Button"
 import s from "./CheckoutSelection.module.scss";
 import { CartContext } from "../../../context/CartContext";
+import { Link } from "react-router-dom";
 
-export const CheckoutSelection = () => {
+export const CheckoutSelection = ({isFormValid}) => {
   return (
     <>
     <div className={s.selectionStyling}>
@@ -26,7 +27,9 @@ export const CheckoutSelection = () => {
         <span className={`${s.checkmark} ${s.secondCheckmark}`}></span>
       </label>
     </div>
-    <Button type="payButton" text="Pay Now"/>
+    {isFormValid ? <Link to="/payment">
+      <Button type="payButton" text="Pay Now"/>
+    </Link> : <p>No lol</p>}
     </>
   );
 };

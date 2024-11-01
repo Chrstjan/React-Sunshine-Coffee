@@ -10,13 +10,22 @@
     }
 
     figure {
+
         @media (min-width: 1200px) {
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             max-width: 500px;
-            
+
+            &:nth-child(1) {
+                img {
+                    max-height: 200px;
+                }
+            }
+        }
+
+        @media (min-width: 1200px) {
             &:nth-child(2) {
                 img {
                     max-height: 251px;
@@ -26,6 +35,12 @@
         }
 
         @media (min-width: 1400px) {
+
+            &:nth-child(1) {
+                img {
+                    min-height: 250px;
+                }
+            }
             &:nth-child(3) {
                 img {
                     margin-top: 1rem
@@ -50,8 +65,9 @@
             margin-top: auto;
             object-fit: cover;
 
-            @media (min-width: 1200px) {
+            @media (min-width: 720px) {
                 max-height: 250px;
+                min-height: 200px;
             }
         }
     }

@@ -23,12 +23,7 @@ export const MainLayout = () => {
         <Wrapper type="iconWrapper">
           <Burgermenu setIsMenuOpen={setIsMenuOpen} />
           <Button type="regionStyling" text="English" />
-          <Icon src="./Cart.png" alt="Shopping Cart" isMenuOpen={isMenuOpen} />
-          {/*Lappeløsning kunne ikke få action til at virke på icon :) */}
-          <Button
-            type="shoppingButton"
-            action={() => setIsCartShown((prev) => !prev)}
-          />
+          <Icon src="./Cart.png" alt="Shopping Cart" isMenuOpen={isMenuOpen} action={() => setIsCartShown((prev) => !prev)} />
           <Link to="/login">
             <Icon src="./User.png" alt="User Account" isMenuOpen={isMenuOpen} />
           </Link>

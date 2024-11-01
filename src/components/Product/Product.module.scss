@@ -13,8 +13,13 @@ h2 {
 .productContainer {
     @include m.flexBox(column, center, center, 1rem);
 
-    @media (min-width: 1200px) {
+    @media (min-width: 720px) {
         display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    @media (min-width: 1200px) {
         grid-template-columns: repeat(3, 1fr);
         gap: 1rem;
     }
@@ -75,9 +80,14 @@ h2 {
         }
     }
 
-    @media (min-width: 1200px) {
+    @media (min-width: 720px) {
         &.singleProduct {
             width: 500px;
+        }
+    }
+
+    @media (min-width: 1200px) {
+        &.singleProduct {
             margin-top: 6rem;
         }
     }

@@ -10,6 +10,7 @@ export const ShoppingCart = ({isCartShown, setIsCartShown}) => {
     const totalPrice = shoppingCart.reduce((acc, item) => acc + item.price * item.quantity, 0)
     const tax = totalPrice * 0.25;
     const totalWithTax = totalPrice + tax;
+    const totalAmount = shoppingCart.reduce((acc, item) => acc + item.quantity, 0);
 
   return (
     <>
@@ -49,10 +50,10 @@ export const ShoppingCart = ({isCartShown, setIsCartShown}) => {
         <span className={s.checkoutContainer}>
          <Button type="shopButton" action={() => clearCart()} text="Clear Cart"/>
          <div>
-          <p>Items in Cart: {shoppingCart.length}</p>
-          <Link to="/checkout">
+          <p>Items in Cart: {totalAmount}</p>
+          {shoppingCart.length > 0 ? <Link to="/checkout">
             <Button type="shopButton" text="Go to Checkout"/>
-          </Link>
+          </Link> : null}
          </div>
         </span>
     </div>

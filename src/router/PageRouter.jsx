@@ -10,6 +10,7 @@ import { PageNotFound } from "../pages/PageNotFound";
 import { SignUpPage } from "../pages/SignUpPage";
 import { useState } from "react";
 import { CookiePolicyPage } from "../pages/CookiePolicyPage";
+import { PaymentPage } from "../pages/PaymentPage";
 
 export const PageRouter = () => {
   const [user, setUser] = useState(null);
@@ -21,6 +22,7 @@ export const PageRouter = () => {
         <Route path={Paths.products} element={<ProductsPage />} />
         <Route path={Paths.product} element={<ProductPage />} />
         <Route path={Paths.checkout} element={<CheckoutPage />} />
+        <Route path={Paths.payment} element={<PaymentPage />}/>
         <Route path={Paths.login} element={<LoginPage user={user} setUser={setUser} />} />
         <Route path={Paths.signUp} element={<SignUpPage user={user} setUser={setUser} />} />
         <Route path={Paths.cookiePolicy} element={<CookiePolicyPage />}/>

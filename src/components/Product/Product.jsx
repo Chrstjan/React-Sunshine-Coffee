@@ -1,6 +1,8 @@
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { Button } from "../Button/Button"
 import s from "./Product.module.scss";
 
@@ -17,14 +19,21 @@ export const Product = ({data, title, withDescription, type, cardType}) => {
         navigate(`/products/${item.id}`);
     }
 
+    const notify = () => toast("Product added to cart");
+
+    const handleAddProduct = (item) => {
+        addToCart(item)
+        notify();
+    }
+
   return (
     <>
     {title ? <h2>{title}</h2> : null}
     <section className={s[type]}>
     {data?.map((item) => {
         return (
-            <figure onClick={() => handleViewProduct(item)} className={`${s.productStyling} ${s[cardType]}`} key={item.id}>
-                <header>
+            <figure className={`${s.productStyling} ${s[cardType]}`} key={item.id}>
+                <header onClick={() => handleViewProduct(item)}>
                     <h3>{item.name}</h3>
                 </header>
                 <div className={s.infoContainer}>
@@ -44,11 +53,12 @@ export const Product = ({data, title, withDescription, type, cardType}) => {
                     {withDescription ? <p>{item.description}</p> : null}
                     <p>{item.price} DKK</p>
                     {withDescription ? <p>Stock: {item.stock}</p> : null}
-                    <Button type="cartButton" action={() => addToCart(item)} text="Add to cart"/>
+                    <Button type="cartButton" action={() => handleAddProduct(item)} text="Add to cart"/>
                 </figcaption>
             </figure>
         )
     })}
+    <ToastContainer />
     </section>
     </>
   )

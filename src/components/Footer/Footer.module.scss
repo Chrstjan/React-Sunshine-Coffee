@@ -7,13 +7,7 @@
     background: $dark-color;
     padding-left: 2.5rem;
 
-    @media (min-width: 1200px) {
-        // position: absolute;
-        // bottom: 0;
-        // width: 100vw;
-    }
-
-    @media (min-width: 1200px) {
+    @media (min-width: 720px) {
         flex-direction: row;
         justify-content: space-evenly;
         gap: 1.5rem;

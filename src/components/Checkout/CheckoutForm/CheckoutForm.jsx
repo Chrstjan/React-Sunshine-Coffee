@@ -1,8 +1,8 @@
 import { useForm } from "react-hook-form";
 import s from "./CheckoutForm.module.scss";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-export const CheckoutForm = () => {
+export const CheckoutForm = ({ setIsFormValid }) => {
   const [data, setData] = useState();
 
   const {
@@ -10,10 +10,14 @@ export const CheckoutForm = () => {
     handleSubmit,
     watch,
     reset,
-    formState: { errors },
+    formState: { errors, isValid },
   } = useForm({
     mode: "all",
   });
+
+  useEffect(() => {
+    setIsFormValid(isValid);
+  }, [isValid, setIsFormValid]);
 
   const handleCheckout = (data) => {
     console.log(data);
