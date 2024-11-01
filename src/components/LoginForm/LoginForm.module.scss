@@ -2,8 +2,17 @@
 @use "../../styles/variables" as *;
 @use "../../styles/placeholders";
 
+h2 {
+    margin-top: 1.5rem;
+
+    @media (min-width: 1200px) {
+        margin-top: 0;
+    }
+}
+
 .formStyling {
     @include m.flexBox(column, center, center, 1rem);
+    margin-bottom: 1rem;
 
     label {
         align-self: flex-start;

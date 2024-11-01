@@ -7,6 +7,7 @@ import { Wrapper } from "../components/Wrapper/Wrapper";
 export const CheckoutPage = () => {
 
   const [isFormValid, setIsFormValid] = useState(false);
+  const [isShippingSelected, setIsShippingSelected] = useState(false);
   return (
     <>
     <h2 style={{marginTop: "7rem", paddingRight: "1rem"}}>Checkout</h2>
@@ -14,7 +15,7 @@ export const CheckoutPage = () => {
       <CheckoutForm setIsFormValid={setIsFormValid}/>
       <div className="checkoutContainer">
         <CheckoutProducts />
-        <CheckoutSelection isFormValid={isFormValid}/>
+        <CheckoutSelection isFormValid={isFormValid} isShippingSelected={isShippingSelected} setIsShippingSelected={setIsShippingSelected}/>
       </div>
     </Wrapper>
     </>

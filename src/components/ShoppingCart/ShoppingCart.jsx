@@ -14,7 +14,7 @@ export const ShoppingCart = ({isCartShown, setIsCartShown}) => {
 
   return (
     <>
-    <div className={`${isCartShown ? s.overlayStyling : s.hideOverlay}`}></div>
+    <div onClick={() => setIsCartShown((prev) => !prev)} className={`${isCartShown ? s.overlayStyling : s.hideOverlay}`}></div>
     <div className={`${isCartShown ? s.cartStyling : s.hideCart}`}>
         <Button type="modalButton" action={() => setIsCartShown(prev => !prev)} text="X"/>
         <h2>Shopping Cart</h2>
@@ -48,7 +48,7 @@ export const ShoppingCart = ({isCartShown, setIsCartShown}) => {
          </span>
         </div> : null}
         <span className={s.checkoutContainer}>
-         <Button type="shopButton" action={() => clearCart()} text="Clear Cart"/>
+          {shoppingCart.length > 0 ? <Button type="shopButton" action={() => clearCart()} text="Clear Cart"/> : null}
          <div>
           <p>Items in Cart: {totalAmount}</p>
           {shoppingCart.length > 0 ? <Link to="/checkout">
